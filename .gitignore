@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+# the stuck timer is per-machine state, not source
+codecoach_state.json
+# where a parent drops the kid's files
+kidcode/
