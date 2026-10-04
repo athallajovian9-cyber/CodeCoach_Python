@@ -18,7 +18,7 @@ if "%TARGET%"=="" set TARGET=%~dp0kidcode
 if not exist "%TARGET%" (
     mkdir "%TARGET%" 2>nul
     echo.
-    echo   Made a folder called kidcode.
+    echo   Made a folder called kidcode. Put your kid's code on the folder and CodeCoach will instantly scan the code your kid makes.
     echo   Put the Python files in there and run this again.
     echo   Or drag any folder onto this file.
     echo.

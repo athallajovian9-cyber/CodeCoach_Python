@@ -56,6 +56,10 @@ def main() -> int:
     ap.add_argument("--watch", action="store_true", help="report again on every save")
     ap.add_argument("--no-run", action="store_true",
                     help="analyse only; never execute the program")
+    ap.add_argument("--kid", action="store_true", default=True,
+                    help="use kid-friendly language (default: True)")
+    ap.add_argument("--parent", dest="kid", action="store_false",
+                    help="use parent mode language")
     ap.add_argument("--interval", type=float, default=1.0,
                     help="seconds between checks while watching (default 1)")
     args = ap.parse_args()
@@ -72,16 +76,16 @@ def main() -> int:
         if target.is_dir():
             checks = [engine.examine(p, now=now, run=not args.no_run)
                       for p in find_programs(target)]
-            print(RP.summary(checks, now))
+            print(RP.summary(checks, now, kid_mode=args.kid))
             worst = 0
             for check, rec in checks:
                 if not check.clean:
-                    print(engine.render(check, rec, now))
+                    print(RP.render(check, rec, now, kid_mode=args.kid))
                     worst = 1
             return worst
 
         check, rec = engine.examine(target, now=now, run=not args.no_run)
-        print(engine.render(check, rec, now))
+        print(RP.render(check, rec, now, kid_mode=args.kid))
         return 0 if check.clean else 1
 
     if args.watch:
