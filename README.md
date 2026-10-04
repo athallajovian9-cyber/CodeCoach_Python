@@ -1,5 +1,8 @@
 # CodeCoach
 
+[![Discord](https://img.shields.io/badge/Discord-Join%20Vortex%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/QtyBucygQ6)
+[![GitHub release](https://img.shields.io/github/v/release/athallajovian9-cyber/CodeCoach_Python?color=10B981)](https://github.com/athallajovian9-cyber/CodeCoach_Python/releases)
+
 Tells a parent what is wrong with their kid's code, in words a non-programmer can
 read — including the bugs Python never mentions.
 
